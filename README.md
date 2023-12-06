@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a modern and stylish beamer theme for ShanghaiTech University. You can use it for academic and scientific presentations. It is originally based on [AIC Presentation Template Light](https://www.overleaf.com/latex/templates/aic-presentation-template-light/bckmxxsgthhm).
+This is a modern and stylish beamer theme for ShanghaiTech University (UNOFFICIAL). You can use it for academic and scientific presentations. It is originally based on [AIC Presentation Template Light](https://www.overleaf.com/latex/templates/aic-presentation-template-light/bckmxxsgthhm).
 
 In the Title Page, Section Page and End Page, Elements of the logo of ShanghaiTech University are disassembled and redesigned to respectively serve as the background. The colors in the slide have also been carefully tailored to suit the style of ShanghaiTech University.
 
