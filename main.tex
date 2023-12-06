@@ -1,0 +1,230 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames, t]{beamer}
+\usepackage{fontspec} % Allows using custom font. MUST be before loading the theme!
+\usetheme{ShanghaiTechRed}
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and  \bottomrule in tables
+\usepackage{svg} % Allows using svg figures
+\usepackage{tikz}
+\usepackage{makecell}
+\usepackage{wrapfig}
+\usepackage{subfig} % Do not confused with "subfigure" or "subcaption", this is better
+\usepackage{float}
+\usepackage{amsmath}
+
+%% Uncomment below if Chinese Need
+% \usepackage{ctex}
+% \setCJKsansfont{SourceHanSansCN}[
+%     Path=./SHTStyleData/SourceHanSansCN/,
+%     Scale=0.9,
+%     Extension = .otf,
+%     UprightFont=*-Regular,
+%     BoldFont=*-Bold,
+%     ItalicFont=*-Italic,
+%     BoldItalicFont=*-BoldItalic
+%     ]
+
+% ADD YOUR PACKAGES BELOW
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE CONFIGURATION
+%----------------------------------------------------------------------------------------
+\title[short title]{ShanghaiTech Beamer Template} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{Subtitle}
+
+\author[Surname]{Shuh Chern}
+\institute[IMS ShanghaiTech]{Institute of Mathematical Science\newline ShanghaiTech University}
+% Your institution as it will appear on the bottom of every slide, maybe shorthand to save space
+
+
+\date{\today} % Date, can be changed to a custom date
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitlepage
+
+\begin{frame}[t]{Overview}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    \tableofcontents
+\end{frame}
+
+%------------------------------------------------
+% Section divider frame
+\makesection{Basics}
+
+%------------------------------------------------
+\begin{frame}{Unordered Lists}
+    \begin{itemize}
+        \item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+        \item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+        \item Nam cursus est eget velit posuere pellentesque
+        \item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+        \item Nam cursus est eget velit posuere pellentesque
+        \item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+    \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ordered List}
+    \begin{enumerate}
+        \item Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        \item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+        \item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+        \item Nam cursus est eget velit posuere pellentesque
+        \item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+        \item Nam cursus est eget velit posuere pellentesque
+        \item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+    \end{enumerate}
+\end{frame}
+
+%------------------------------------------------
+% Highlight boxes
+\begin{frame}{Blocks of Highlighted Text}
+    In this slide, some important text will be \alert{highlighted} because it's important. Please, don't abuse it.
+
+    \begin{block}{Block}
+        Sample text
+    \end{block}
+
+    \begin{alertblock}{Alertblock}
+        Sample text
+    \end{alertblock}
+
+    \begin{exampleblock}{Example}
+        Sample text
+    \end{exampleblock}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]% Need to use the fragile option when verbatim is used in the slide
+    \frametitle{Codes}
+    You can use \verb|verbatim| environment to cite codes:
+    \begin{verbatim}
+        #include <iostream>
+        int main()
+        {
+          std::cout << "Hello, world!"
+                    << std::endl;
+        return 0; }
+    \end{verbatim}
+\end{frame}
+%------------------------------------------------
+\begin{frame}[fragile]
+    \frametitle{Footnotes}
+    Simply use \verb|\footnote| to create footnotes like:
+    \begin{itemize}
+        \item The Master said, ``Is it not pleasant to learn with a constant perseverance and application? Is it not delightful to have friends coming from distant quarters? Is he not a man of complete virtue, who feels no discomposure though men may take no note of him?"\footnote{The Analects of Confucius - Xue Er}
+        \item The Master said, ``He who exercises government by means of his virtue may be compared to the north polar star, which keeps its place and all the stars turn towards it."\footnote{The Analects of Confucius - Wei Zheng}
+    \end{itemize}
+\end{frame}
+%------------------------------------------------
+% Section divider frame
+\makesection{Table, Figure and Column}
+
+%------------------------------------------------
+% Table
+\begin{frame}{Table}
+    \begin{table}
+        \begin{tabular}{l l l}
+            \toprule
+            \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2} \\
+            \midrule
+            Treatment 1         & 0.0003262           & 0.562               \\
+            Treatment 2         & 0.0015681           & 0.910               \\
+            Treatment 3         & 0.0009271           & 0.296               \\
+            \bottomrule
+        \end{tabular}
+        \caption{Table Caption Here}
+    \end{table}
+\end{frame}
+%------------------------------------------------
+% Figure without wrapped text
+\begin{frame}{Figure}
+    \begin{figure}
+    \includegraphics[height=0.5\paperheight]{figures/campus.jpeg}
+    \caption{ShanghaiTech Campus}
+    \end{figure}
+\end{frame}
+%------------------------------------------------
+% Figure with wrapped text
+\begin{frame}{Wrapped Figure}
+    \begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/campus.jpeg}
+    \caption{Figure Caption Here}
+    \end{wrapfigure}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{frame}
+%------------------------------------------------
+\begin{frame}[fragile]
+    \frametitle{Multiple Figures}
+    \begin{figure}[H]
+        \centering
+        \subfloat[Title]{\includegraphics[width=.45\columnwidth]{figures/campus.jpeg}}\hspace{1em}
+        \subfloat[Title]{\includegraphics[width=.45\columnwidth]{figures/campus.jpeg}}%\\ % Multiple figures line break
+        \caption{Description}
+    \end{figure}
+\end{frame}
+%------------------------------------------------
+% Double columns
+\begin{frame}{Multiple Columns}
+    \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \colheader{Heading}
+        \begin{enumerate}
+            \item Statement
+            \item Explanation
+            \item Example
+        \end{enumerate}
+    \end{column}
+    \begin{column}{0.45\textwidth}  %%<--- here
+        \colheader{Heading}
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+    \end{column}
+    \end{columns}
+\end{frame}
+%------------------------------------------------
+% Section divider frame
+\makesection{Mathematics}
+
+%------------------------------------------------
+% Theoerm (in highlighted box) and Equation in text
+\begin{frame}{Structure}
+    \begin{block}{Definition (Galois connections)}
+        Let $P$ and $Q$ be ordered sets. A pair $(\;^\triangleright,\;^\triangleleft)$ of maps $^\triangleright: P \to Q$ and $^\triangleleft: Q \to P$ (called right and left respectively) is a Galois connection between $P$ and $Q$ if, for all $p \in P$ and $q \in Q$,
+        \[p^\triangleright \leqslant q \Leftrightarrow q^\triangleleft \leqslant p.\]
+    \end{block}
+    \begin{exampleblock}{Examples}
+        Suppose that sets $P$ and $Q$ are ordered by the discrete order $=$. Then $^{\triangleright}:P\to Q$ and $^{\triangleleft}:Q\to P$ set up a Galois connection between $P$ and $Q$ if and only if these maps are set-theoretic inverses of each other.
+    \end{exampleblock}
+\end{frame}
+
+%------------------------------------------------
+% Refenrences
+\begin{frame}{References}
+    % Beamer does not support BibTeX so references must be inserted manually as below
+    \footnotesize{
+        \begin{thebibliography}{}
+            \bibitem[1]{APA}Author, A. A., Author, B. B., \& Author, C. C. (Year). Title of article. \textit{Title of Journal}, volume number(issue number), page range.
+            \bibitem[2]{MLA}Author. ``Title of Source." \textit{Title of Container}, other contributors, version, numbers, publisher, publication date, location.
+            \bibitem[3]{Chicago}Last Name, First Name. \textit{Title of Book}. Place of publication: Publisher, Year.
+            \bibitem[4]{IEEE}A. Author, ``Title of Paper," \textit{Title of Journal}, vol. x, no. x, pp. xxx-xxx, Month, Year.
+            \bibitem[5]{Harvard}Author(s) Last name, Initial(s). (Year) `Title of article', \textit{Title of Journal}, Volume number (Issue number), Page numbers.
+        \end{thebibliography}
+    }
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+% Final PAGE
+% Set the text that is showed on the final slide
+\finalpagetext{Thank you for your attention}
+%----------------------------------------------------------------------------------------
+\makefinalpage
+%----------------------------------------------------------------------------------------
+\end{document}
